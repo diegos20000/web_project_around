@@ -1,0 +1,13 @@
+.header {
+  margin-left: 200px;
+
+  margin-right: 200px;
+}
+.header__title {
+  margin-top: 45px;
+}
+.header__hr {
+  opacity: 70%;
+  border: 1px solid;
+  color: #545454;
+}

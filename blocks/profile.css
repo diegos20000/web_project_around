@@ -1,0 +1,53 @@
+.profile {
+  max-width: 880px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.profile__img {
+  max-width: 100%;
+  width: 168px;
+  height: 127px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 40px;
+}
+.profile__info {
+  max-width: 415px;
+  margin-left: 30px;
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.profile__name {
+  max-width: 373px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+}
+.profile__exp {
+  max-width: 415px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+.profile__button {
+  width: 24px;
+  height: 24px;
+  margin-left: 200px;
+
+  border: 1px solid;
+  border-color: white;
+  background-color: #000;
+}
+.profile__addbutton {
+  width: 150px;
+  height: 50px;
+  border-radius: 2px;
+  border-color: white;
+  background-color: #000;
+  color: white;
+  margin-top: 75px;
+}
