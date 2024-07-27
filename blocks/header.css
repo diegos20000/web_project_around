@@ -1,13 +1,18 @@
 .header {
-  margin-left: 200px;
-
-  margin-right: 200px;
+  margin: 5% 0;
 }
 .header__title {
-  margin-top: 45px;
+  width: 180px;
+  margin: 2% 0;
 }
+
 .header__hr {
-  opacity: 70%;
-  border: 1px solid;
-  color: #545454;
+  border-color: #545454;
+  width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .header__title {
+    width: 124px;
+  }
 }

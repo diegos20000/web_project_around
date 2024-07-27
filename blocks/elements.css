@@ -1,9 +1,0 @@
-.elements {
-  margin: auto;
-  padding-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 17px;
-  width: 880px;
-  height: 743px;
-}

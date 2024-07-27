@@ -1,12 +1,13 @@
 .footer__copyright {
-  display: flex;
-  justify-content: flex-start;
-  max-width: 318px;
-  margin-top: 67px;
-  margin-bottom: 60px;
-  margin-left: 200px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
   font-size: 18px;
+  text-align: left;
   color: #545454;
+  margin: 10% auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .footer__copyright {
+    width: 90%;
+  }
 }

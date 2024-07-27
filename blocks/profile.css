@@ -1,53 +1,55 @@
 .profile {
-  max-width: 880px;
-  margin: auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin: 5% auto;
+  width: 100%;
+  border-color: aliceblue;
 }
 .profile__img {
-  max-width: 100%;
-  width: 168px;
-  height: 127px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-top: 40px;
 }
 .profile__info {
-  max-width: 415px;
-  margin-left: 30px;
-  margin-top: 22px;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 0;
+  width: 60%;
 }
-.profile__name {
-  max-width: 373px;
-  font-family: "Inter", sans-serif;
+.group {
+  display: flex;
+  flex-direction: row;
+}
+.group__name {
   font-weight: 500;
   font-size: 42px;
-  line-height: 48px;
+  text-align: left;
+  margin: 0;
 }
 .profile__exp {
-  max-width: 415px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
   font-size: 18px;
-  line-height: 21px;
+  font-weight: 400;
+  text-align: left;
 }
-.profile__button {
-  width: 24px;
-  height: 24px;
-  margin-left: 200px;
-
-  border: 1px solid;
-  border-color: white;
-  background-color: #000;
+.group__botton {
+  margin-left: 5%;
+  background: none;
+  border-style: none;
+}
+.group__botton:hover {
+  opacity: 50%;
 }
 .profile__addbutton {
+  background: none;
+  border-style: none;
+}
+.profile__button-img {
   width: 150px;
-  height: 50px;
-  border-radius: 2px;
-  border-color: white;
-  background-color: #000;
-  color: white;
-  margin-top: 75px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #c4c4c4;
+  padding: 5% 0px;
+}
+.profile__addbutton:hover {
+  opacity: 50%;
 }
