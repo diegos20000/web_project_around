@@ -17,6 +17,8 @@
 .element__img {
   width: 100%;
   object-fit: fill;
+  width: 282px;
+  height: 282px;
 }
 .element__text {
   display: flex;
@@ -24,12 +26,20 @@
   align-items: center;
   justify-content: space-between;
   margin: auto 5%;
+  max-width: 246px;
 }
 .element__name {
   font-size: 24px;
   font-weight: 900;
   text-align: left;
   color: black;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.element__likes {
+  margin-left: 85%;
+  margin-top: -20%;
 }
 .element__like {
   background-size: cover;
@@ -46,6 +56,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+  }
+  .element__img {
+    width: 100%;
   }
 }
 

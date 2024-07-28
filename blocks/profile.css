@@ -31,12 +31,12 @@
   font-weight: 400;
   text-align: left;
 }
-.group__botton {
+.group__button {
   margin-left: 5%;
   background: none;
   border-style: none;
 }
-.group__botton:hover {
+.group__button:hover {
   opacity: 50%;
 }
 .profile__addbutton {
@@ -45,11 +45,64 @@
 }
 .profile__button-img {
   width: 150px;
+  max-width: 100%;
+
   border-style: solid;
   border-width: 2px;
-  border-color: #c4c4c4;
+
+  background-color: #000;
   padding: 5% 0px;
 }
 .profile__addbutton:hover {
   opacity: 50%;
+}
+
+@media screen and (max-width: 720px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .profile__button-img {
+    width: 90vw;
+    height: 50px;
+    padding: 2% 0px;
+    margin: 10px;
+  }
+  .profile__exp {
+    text-align: center;
+    margin-top: 0px;
+  }
+  .group {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .profile__info {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .group__name {
+    font-size: 30px;
+  }
+  .group__button {
+    width: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .group {
+    width: 224px;
+  }
+  .group__name {
+    font-size: 22px;
+  }
+  .profile__exp {
+    font-size: 14px;
+  }
 }
