@@ -19,6 +19,7 @@
   object-fit: fill;
   width: 282px;
   height: 282px;
+  border-radius: 10px;
 }
 .element__text {
   display: flex;
