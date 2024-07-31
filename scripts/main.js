@@ -1,12 +1,12 @@
-let popupProfile = document.querySelector(".popup");
-let profileEditButton = document.querySelector(".group__button");
-let profileNameNode = document.querySelector(".group__name");
-let profileAboutNode = document.querySelector(".profile__exp");
-let formProfile = document.querySelector(".popup__input");
-let inputNameNode = formProfile.querySelector(".popup__text_title");
-let inputAboutNode = formProfile.querySelector(".popup__text-about");
-let closeProfilePopupButton = popupProfile.querySelector(".popup__close");
-let popupSaveButton = formProfile.querySelector(".popup__submit-btn");
+const popupProfile = document.querySelector(".popup");
+const profileEditButton = document.querySelector(".group__button");
+const profileNameNode = document.querySelector(".group__name");
+const profileAboutNode = document.querySelector(".profile__exp");
+const formProfile = document.querySelector(".popup__input");
+const inputNameNode = formProfile.querySelector(".popup__text_title");
+const inputAboutNode = formProfile.querySelector(".popup__text_about");
+const closeProfilePopupButton = popupProfile.querySelector(".popup__close");
+const popupSaveButton = formProfile.querySelector(".popup__submit-btn");
 
 profileEditButton.addEventListener("click", function () {
   popupProfile.classList.add("active");
