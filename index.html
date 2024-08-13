@@ -64,123 +64,69 @@
             </div>
             <p class="profile__exp">Explorador</p>
           </section>
-          <button class="profile__addbutton">
+          <button class="profile__addbutton" id="profile__button">
             <img
               src="./images/Rectangle.jpg"
               alt="Add Button"
               class="profile__button-img"
             />
           </button>
-        </div>
-        <div class="elements">
-          <div class="element">
-            <img
-              src="./images/latemar.jpg"
-              alt="big pine lakes"
-              class="element__img"
-            />
-            <div class="element__text">
-              <p class="element__name">Latemar</p>
-            </div>
-            <div class="element__likes">
-              <img
-                class="element__like"
-                src="./images/like.jpg"
-                alt="Heart pic"
-              />
-            </div>
-          </div>
-          <div class="element">
-            <img
-              src="./images/lake crater.jpg"
-              alt="Lake Crater"
-              class="element__img"
-            />
-            <div class="element__text">
-              <p class="element__name">Crater Lake</p>
-            </div>
-            <div class="element__likes">
-              <img
-                class="element__like"
-                src="./images/like.jpg"
-                alt="Heart pic"
-              />
-            </div>
-          </div>
-          <div class="element">
-            <img
-              src="./images/lake powell.jpg"
-              alt="Lake Powell"
-              class="element__img"
-            />
+          <div class="popup__addprofile">
+            <div class="popup__container-profile">
+              <button class="popup__close-profile">
+                <img
+                  class="popup__close-profile"
+                  src="./images/Close Icon.jpg"
+                  alt="close icon"
+                />
+              </button>
+              <div class="popup__element">
+                <h3 class="popup__title-profile">New Place</h3>
+                <form class="popup__input-profile">
+                  <input
+                    class="popup_texts popup__profile_text"
+                    type="text"
+                    placeholder="Title"
+                    value="Title"
+                  />
+                  <input
+                    class="popup_texts popup__profile_about"
+                    type="text"
+                    placeholder="Image URL"
+                    value="Image URL"
+                  />
 
-            <div class="element__text">
-              <p class="element__name">Powell Lake</p>
+                  <button class="popup__submit">Save</button>
+                </form>
+              </div>
             </div>
-            <div class="element__likes">
-              <img
-                class="element__like"
-                src="./images/like.jpg"
-                alt="Heart pic"
-              />
-            </div>
-          </div>
-          <div class="element">
-            <img
-              src="./images/mammoth lake.jpg"
-              alt="Lake Mammoth"
-              class="element__img"
-            />
-            <div class="element__text">
-              <p class="element__name">Mammoth Lakes</p>
-            </div>
-            <div class="element__likes">
-              <img
-                class="element__like"
-                src="./images/like.jpg"
-                alt="Heart pic"
-              />
-            </div>
-          </div>
-          <div class="element">
-            <img
-              src="./images/shenandoah.jpg"
-              alt="Shenandoah Park"
-              class="element__img"
-            />
-            <div class="element__text">
-              <p class="element__name">Shenandoah Valleys</p>
-            </div>
-            <div class="element__likes">
-              <img
-                class="element__like"
-                src="./images/like.jpg"
-                alt="Heart pic"
-              />
-            </div>
-          </div>
-          <div class="element">
-            <img
-              src="./images/yosemite.jpg"
-              alt="Yosemite Valley"
-              class="element__img"
-            />
-            <div class="element__text">
-              <p class="element__name">Yosemite</p>
-            </div>
-            <div class="element__likes">
-              <img
-                class="element__like"
-                src="./images/like.jpg"
-                alt="Heart pic"
-              />
-            </div>
+            <div class="popups__overlay"></div>
           </div>
         </div>
+        <div class="elements"></div>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy;2024 Around The U.S.</p>
       </footer>
+      <template id="card__template">
+        <div class="element">
+          <img
+            src="./images/yosemite.jpg"
+            alt="Yosemite Valley"
+            class="element__img"
+          />
+          <div class="element__text">
+            <p class="element__name">Yosemite</p>
+          </div>
+          <div class="element__likes">
+            <img
+              class="element__like"
+              src="./images/like.jpg"
+              alt="Heart pic"
+            />
+          </div>
+        </div>
+      </template>
     </div>
     <script src="./scripts/main.js"></script>
   </body>
