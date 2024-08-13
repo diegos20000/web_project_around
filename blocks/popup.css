@@ -103,6 +103,11 @@
   opacity: 0;
   scale: 0;
 }
+.popup__active {
+  opacity: 1;
+  pointer-events: all;
+  scale: 1;
+}
 .popup__container-profile {
   width: 470px;
   height: 370px;

@@ -50,10 +50,9 @@ const initialCards = [
 ];
 
 profileAddButton.addEventListener("click", function () {
-  profileButton.classList.add("active");
+  profileButton.classList.add("popup__active");
   inputName.value = formProfile.textContent;
   inputAbout.value = formProfile.textContent;
-  popupSave.classList.remove("active");
 });
 
 function createElements(title, link) {
