@@ -64,36 +64,40 @@
             </div>
             <p class="profile__exp">Explorador</p>
           </section>
-          <button class="profile__addbutton" id="profile__button">
+          <button class="profile__addbutton">
             <img
               src="./images/Rectangle.jpg"
               alt="Add Button"
               class="profile__button-img"
             />
           </button>
-          <div class="popup__addprofile">
-            <div class="popup__container-profile">
-              <button class="popup__close-profile">
+          <div class="popup" id="popup__cards">
+            <div class="popup__container">
+              <button class="popup__close">
                 <img
-                  class="popup__close-profile"
+                  class="popup__close"
                   src="./images/Close Icon.jpg"
                   alt="close icon"
                 />
               </button>
               <div class="popup__element">
-                <h3 class="popup__title-profile">New Place</h3>
-                <form class="popup__input-profile">
+                <h3 class="popup__title">New Place</h3>
+                <form class="popup__input" id="form__profile">
                   <input
-                    class="popup_texts popup__profile_text"
+                    class="popup__input_title popup__text"
                     type="text"
                     placeholder="Title"
                     value="Title"
+                    name="title"
+                    id="input__card_title"
                   />
                   <input
-                    class="popup_texts popup__profile_about"
+                    class="popup__input_url popup__text"
                     type="text"
                     placeholder="Image URL"
                     value="Image URL"
+                    name="link"
+                    id="input__card_link"
                   />
 
                   <button class="popup__submit">Save</button>
@@ -110,13 +114,14 @@
       </footer>
       <template id="card__template">
         <div class="element">
+          <div class="trash__icon"></div>
           <img
             src="./images/yosemite.jpg"
             alt="Yosemite Valley"
             class="element__img"
           />
           <div class="element__text">
-            <p class="element__name">Yosemite</p>
+            <p class="element__name"></p>
           </div>
           <div class="element__likes">
             <img

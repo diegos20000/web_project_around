@@ -2,26 +2,25 @@ const popupProfile = document.querySelector(".popup");
 const profileEditButton = document.querySelector(".group__button");
 const profileNameNode = document.querySelector(".group__name");
 const profileAboutNode = document.querySelector(".profile__exp");
-
 const formProfile = document.querySelector(".popup__input");
-const inputNameNode = formProfile.querySelector(".popup__text_title");
-const inputAboutNode = formProfile.querySelector(".popup__text_about");
+const inputNameNode = document.querySelector(".popup__text_title");
+const inputAboutNode = document.querySelector(".popup__text_about");
+const closeProfilePopupButton = document.querySelector(".popup__close");
+const popupSaveButton = document.querySelector(".popup__submit-btn");
 
-const closeProfilePopupButton = popupProfile.querySelector(".popup__close");
-const popupSaveButton = formProfile.querySelector(".popup__submit-btn");
+const profileButton = document.querySelector(".profile__addbutton");
+const popupCards = document.querySelector("#popup__cards");
+const formAddCards = document.querySelector("#form__profile");
+const closeAddButton = document.querySelector(".popup__close");
+const inputCardTitle = document.querySelector("#input__card_title");
+const inputCardLink = document.querySelector("#input__card_link");
+
+const submitPopup = document.querySelector(".popup__submit");
+const popupTitle = document.querySelector(".popup_input_title");
+const popupUrl = document.querySelector(".popup_input_url");
 
 const cardTemplate = document.querySelector("#card__template").content;
-const elements = document.querySelector(".elements");
-
-const profileButton = document.querySelector(".popup__addprofile");
-const profileAddButton = document.querySelector(".profile__addbutton");
-const formInputProfile = document.querySelector(".popup__input-profile");
-const inputName = formInputProfile.querySelector(".popup__profile_text");
-const inputAbout = formInputProfile.querySelector(".popup__profile_about");
-
-const closeProfilePopup = profileButton.querySelector(".popup__close-profile");
-const popupSave = formInputProfile.querySelector(".popup__submit");
-
+const cardArea = document.querySelector(".elements");
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -49,24 +48,46 @@ const initialCards = [
   },
 ];
 
-profileAddButton.addEventListener("click", function () {
-  profileButton.classList.add("popup__active");
-  inputName.value = formProfile.textContent;
-  inputAbout.value = formProfile.textContent;
+function openPopupCards() {
+  popupCards;
+  classList.add("popup__opened");
+}
+
+function popupClose() {
+  popupCards.classList.remove("popup_opened");
+}
+
+profileButton.addEventListener("click", openPopupCards);
+profileButton.addEventListener("click", popupClose);
+
+formAddCards.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  const newCard = createCard(inputCardTitle.value, inputCardLink.value);
+  cardArea.append(newCard);
+  closeProfilePopupButton(),
 });
 
-function createElements(title, link) {
-  const elements = cardTemplate.querySelector(".element").cloneNode(true);
-  const elementImg = elements.querySelector(".element__img");
-  const elementName = elements.querySelector(".element__name");
-  elementName.textContent = title;
+function createCard(name, link) {
+  const element = cardTemplate.querySelector(".element").cloneNode(true);
+  const elementImg = element.querySelector(".element__img");
+  const elementText = element.querySelector(".element__text");
+  const elementLikes = element.querySelector("element__likes");
+  elementLikes.addEventListener("click", function () {
+    elementLikes.classList.toggle("element__likes_active");
+  });
+  elementImg.addEventListener("click", function () {
+    openPopup(title, link);
+  });
+  elementText.textContent = name;
   elementImg.src = link;
-  elementImg.addEventListener("click", function () {});
-  cardArea.append(elements);
+  elementImg.alt = name;
+  return element;
 }
-closeProfilePopup.addEventListener("click", function () {
-  profileButton.classList.remove("active");
-  popupSave.classList.remove("active");
+
+initialCards.forEach(function (item) {
+  const newCard = createCard(item.name, item.link);
+  cardArea.append(newCard);
 });
 
 profileEditButton.addEventListener("click", function () {
