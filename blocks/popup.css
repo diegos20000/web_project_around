@@ -91,7 +91,7 @@
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+/*
 .popup__addprofile {
   position: fixed;
   top: 0px;
@@ -102,6 +102,11 @@
   height: 100%;
   opacity: 0;
   scale: 0;
+}
+.popup__active {
+  opacity: 1;
+  pointer-events: all;
+  scale: 1;
 }
 .popup__container-profile {
   width: 470px;
@@ -176,3 +181,4 @@
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.5);
 }
+*/

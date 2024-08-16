@@ -42,6 +42,9 @@
   margin-left: 85%;
   margin-top: -20%;
 }
+.element__likes_active {
+  background-image: url(../images/darklike.jpg);
+}
 .element__like {
   background-size: cover;
   background-repeat: no-repeat;
