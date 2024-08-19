@@ -11,7 +11,7 @@ const popupSaveButton = document.querySelector(".popup__submit-btn");
 const profileButton = document.querySelector(".profile__addbutton");
 const popupCards = document.querySelector("#popup__cards");
 const formAddCards = document.querySelector("#form__profile");
-const closeAddButton = document.querySelector(".popup__close");
+/*const closeAddButton = document.querySelector(".popup__close");*/
 const inputCardTitle = document.querySelector("#input__card_title");
 const inputCardLink = document.querySelector("#input__card_link");
 
@@ -50,8 +50,20 @@ const initialCards = [
 
 function openPopupCards() {
   popupCards;
-  classList.add("popup__opened");
+  classList.add("popup__cards");
 }
+
+profileButton.addEventListener("click", function () {
+  popupCards.classList.add("active");
+  popupTitle.value = textContent;
+  popupUrl.value = textContent;
+  submitPopup.classList.remove("active");
+});
+
+closeProfilePopupButton.addEventListener("click", function () {
+  popupCards.classList.remove("active");
+  submitPopup.classList.remove("active");
+});
 
 function popupClose() {
   popupCards.classList.remove("popup_opened");
@@ -65,14 +77,14 @@ formAddCards.addEventListener("submit", function (evt) {
 
   const newCard = createCard(inputCardTitle.value, inputCardLink.value);
   cardArea.append(newCard);
-  closeProfilePopupButton(),
+  closeAddButton();
 });
 
 function createCard(name, link) {
   const element = cardTemplate.querySelector(".element").cloneNode(true);
   const elementImg = element.querySelector(".element__img");
   const elementText = element.querySelector(".element__text");
-  const elementLikes = element.querySelector("element__likes");
+  const elementLikes = element.querySelector(".element__likes");
   elementLikes.addEventListener("click", function () {
     elementLikes.classList.toggle("element__likes_active");
   });
@@ -110,4 +122,14 @@ formProfile.addEventListener("submit", function (event) {
 closeProfilePopupButton.addEventListener("click", function () {
   popupProfile.classList.remove("active");
   popupSaveButton.classList.remove("active");
+});
+
+const elementImg = element.querySelector("element__img");
+elementImg.addEventListener("click", function () {
+  const popupImage = document.querySelector("popup__image");
+  const popupImageLarge = popupImage.querySelector("popup__large-image");
+  const popupImageTitle = popupImage.querySelector("popup_title-img");
+  popupImageLarge.src = data.link;
+  popupImageTitle.textContent = data.name;
+  popupImage.classList.add("active");
 });
