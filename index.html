@@ -80,11 +80,11 @@
                   alt="close icon"
                 />
               </button>
-              <div class="popup__element">
+              <div class="popup__card">
                 <h3 class="popup__title">New Place</h3>
                 <form class="popup__input" id="form__profile">
                   <input
-                    class="popup__input_title popup__text"
+                    class="popup__text popup__input_title"
                     type="text"
                     placeholder="Title"
                     value="Title"
@@ -92,7 +92,7 @@
                     id="input__card_title"
                   />
                   <input
-                    class="popup__input_url popup__text"
+                    class="popup__text popup__input_url"
                     type="text"
                     placeholder="Image URL"
                     value="Image URL"
@@ -100,11 +100,31 @@
                     id="input__card_link"
                   />
 
-                  <button class="popup__submit">Save</button>
+                  <button
+                    class="popup__submit-btn popup__submit-btn_action_add"
+                  >
+                    Save
+                  </button>
                 </form>
               </div>
             </div>
             <div class="popups__overlay"></div>
+          </div>
+        </div>
+        <div class="popup__image" id="popup__image">
+          <div class="popup__image-container">
+            <button class="popup__close">
+              <img
+                src="./images/Close_off.svg"
+                alt="close button"
+                class="popup__close"
+              />
+            </button>
+            <div class="popup__image-content">
+              <img src="" alt="large image" class="popup__large-image" />
+              <h3 class="popup_title-img"></h3>
+            </div>
+            <div class="popup__overlay"></div>
           </div>
         </div>
         <div class="elements"></div>
@@ -125,7 +145,7 @@
           </div>
           <div class="element__likes">
             <img
-              class="element__like"
+              class="element__likes"
               src="./images/like.jpg"
               alt="Heart pic"
             />

@@ -47,6 +47,7 @@
   font-size: 24px;
   font-weight: bold;
   margin: 5% 10%;
+  color: #000;
 }
 .popup__text {
   margin: 2% 10%;
@@ -182,3 +183,39 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 */
+
+.popup__image {
+  position: fixed;
+  top: 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+.popup__image.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__image-container {
+  max-width: 75vw;
+  max-height: 75vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 18% auto;
+}
+.popup__large-image {
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 10px;
+}

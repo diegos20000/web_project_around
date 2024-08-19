@@ -28,31 +28,28 @@
   justify-content: space-between;
   margin: auto 5%;
   max-width: 246px;
+  color: black;
 }
 .element__name {
   font-size: 24px;
   font-weight: 900;
   text-align: left;
   color: black;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 .element__likes {
-  margin-left: 85%;
-  margin-top: -20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #00000000;
+  border-style: none;
+  box-sizing: border-box;
+  margin: 1px;
 }
 .element__likes_active {
   background-image: url(../images/darklike.jpg);
 }
-.element__like {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  box-sizing: border-box;
-  margin: 1px;
-}
-.element__like:hover {
+
+.element__likes:hover {
   opacity: 50%;
 }
 @media screen and (max-width: 768px) {
