@@ -12,6 +12,7 @@
   border-color: black;
   border-radius: 10px;
   margin: 0;
+  display: inline-block;
 }
 
 .element__img {
@@ -19,16 +20,16 @@
   object-fit: cover;
   width: 282px;
   height: 282px;
-  border-radius: 10px;
 }
 .element__text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   margin: auto 5%;
-  max-width: 246px;
+  max-width: 237px;
   color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 10px;
+  text-align: left;
 }
 .element__name {
   font-size: 24px;
@@ -43,7 +44,11 @@
   background-color: #00000000;
   border-style: none;
   box-sizing: border-box;
-  margin: 1px;
+  margin-top: -19px;
+  margin-right: 2px;
+  padding: 1px;
+  display: flex;
+  justify-content: flex-end;
 }
 .element__likes_active {
   background-image: url(../images/darklike.jpg);
