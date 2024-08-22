@@ -41,6 +41,45 @@
       </div>
       <div class="popup__overlay"></div>
     </div>
+    <div class="popup" id="popup__cards">
+      <div class="popup__container">
+        <button class="popup__close" id="close-popup-cards">
+          <img
+            class="popup__close"
+            src="./images/Close Icon.jpg"
+            alt="close icon"
+          />
+        </button>
+        <div class="popup__card">
+          <h3 class="popup__title">New Place</h3>
+          <form class="popup__input" id="form__profile">
+            <input
+              class="popup__text popup__input_title"
+              type="text"
+              placeholder="Title"
+              name="title"
+              id="input__card_title"
+            />
+            <input
+              class="popup__text popup__input_url"
+              type="text"
+              placeholder="Image URL"
+              name="link"
+              id="input__card_link"
+            />
+
+            <button
+              class="popup__submit-btn popup__submit-btn_action_add"
+              id="card-submit-button"
+            >
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="popups__overlay"></div>
+    </div>
+
     <div class="page">
       <header class="header">
         <p class="header__title">
@@ -71,51 +110,12 @@
               class="profile__button-img"
             />
           </button>
-          <div class="popup" id="popup__cards">
-            <div class="popup__container">
-              <button class="popup__close">
-                <img
-                  class="popup__close"
-                  src="./images/Close Icon.jpg"
-                  alt="close icon"
-                />
-              </button>
-              <div class="popup__card">
-                <h3 class="popup__title">New Place</h3>
-                <form class="popup__input" id="form__profile">
-                  <input
-                    class="popup__text popup__input_title"
-                    type="text"
-                    placeholder="Title"
-                    value="Title"
-                    name="title"
-                    id="input__card_title"
-                  />
-                  <input
-                    class="popup__text popup__input_url"
-                    type="text"
-                    placeholder="Image URL"
-                    value="Image URL"
-                    name="link"
-                    id="input__card_link"
-                  />
-
-                  <button
-                    class="popup__submit-btn popup__submit-btn_action_add"
-                  >
-                    Save
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div class="popups__overlay"></div>
-          </div>
         </div>
         <div class="popup__image" id="popup__image">
           <div class="popup__image-container">
-            <button class="popup__close">
+            <button class="popup__close" id="popup__close_img">
               <img
-                src="./images/Close_off.svg"
+                src="./images/Close Icon.jpg"
                 alt="close button"
                 class="popup__close"
               />
@@ -136,15 +136,17 @@
         <div class="element">
           <div class="trash__icon"></div>
           <img src="" class="element__img" />
-          <div class="element__text">
-            <p class="element__name"></p>
-          </div>
-          <div class="element__likes">
-            <img
-              class="element__likes"
-              src="./images/like.jpg"
-              alt="Heart pic"
-            />
+          <div class="element_text-like">
+            <div class="element__text">
+              <p class="element__name"></p>
+            </div>
+            <div class="element__likes">
+              <img
+                class="element__likes"
+                src="./images/like.jpg"
+                alt="Heart pic"
+              />
+            </div>
           </div>
         </div>
       </template>
