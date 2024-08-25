@@ -55,6 +55,7 @@
   height: 20px;
   display: flex;
   justify-content: flex-end;
+  background-image: url(../images/like.jpg);
 }
 .element__likes_active {
   background-image: url(../images/darklike.jpg);
@@ -63,6 +64,24 @@
 .element__likes:hover {
   opacity: 50%;
 }
+
+.element__trash {
+  width: 280px;
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+
+  border-style: none;
+}
+.element__trash_icon {
+  opacity: 100%;
+  width: 8%;
+}
+.element__trash_icon:hover {
+  opacity: 60%;
+  width: 10%;
+}
+
 @media screen and (max-width: 768px) {
   .elements {
     display: grid;

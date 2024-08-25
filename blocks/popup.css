@@ -9,6 +9,7 @@
   height: 100%;
   opacity: 0;
   scale: 0;
+  z-index: 500;
 }
 .popup.active {
   opacity: 1;
@@ -30,6 +31,7 @@
   background: none;
   border-style: none;
   margin-left: -5px;
+  color: black;
 }
 
 .popup__card {
@@ -125,4 +127,6 @@
   margin: 0 auto;
   height: auto;
   border-radius: 10px;
+  width: 500px;
+  height: 500px;
 }
