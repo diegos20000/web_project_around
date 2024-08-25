@@ -8,6 +8,7 @@ const inputAboutNode = document.querySelector(".popup__text_about");
 const closeProfilePopupButton = document.querySelector(".popup__close");
 const closeCardsPopupButton = document.querySelector("#close-popup-cards");
 const popupImg = document.querySelector("#popup__image");
+const closeTrash = document.querySelector(".element__trash");
 
 const closeImgPopupButton = document.querySelector("#popup__close_img");
 
@@ -79,7 +80,7 @@ formAddCards.addEventListener("submit", function (evt) {
 
   const newCard = createCard(inputCardTitle.value, inputCardLink.value);
   cardArea.prepend(newCard);
-  closeProfilePopupButton();
+  popupProfile.classList.remove("active");
 });
 
 function createCard(name, link) {
@@ -88,7 +89,11 @@ function createCard(name, link) {
   const elementText = element.querySelector(".element__text");
   const elementLikes = element.querySelector(".element__likes");
   elementLikes.addEventListener("click", function () {
-    elementLikes.classList.toggle(".element__likes_active");
+    elementLikes.classList.toggle("element__likes_active");
+  });
+  const elementTrash = element.querySelector(".element__trash_icon");
+  elementTrash.addEventListener("click", function () {
+    element.remove("active");
   });
   elementImg.addEventListener("click", function () {
     const popupImage = document.querySelector(".popup__image");
