@@ -22,18 +22,35 @@
         </button>
         <div class="popup__card">
           <h3 class="popup__title">Editar perfil</h3>
-          <form class="popup__input">
+          <form class="popup__input" novalidate>
             <input
               class="popup__text popup__text_title"
               type="text"
               placeholder="Nombre"
+              minlength="2"
+              maxlength="40"
+              id="popup__input_name"
+              required
             />
+            <span class="popup__input-error popup__input_name-error">
+              aqui ira el mesanje de error:
+            </span>
             <input
               class="popup__text popup__text_about"
               type="text"
               placeholder="Acerca de mí"
+              minlength="2"
+              maxlength="40"
+              id="popup__input_about"
+              required
             />
-            <button class="popup__submit-btn popup__submit-btn_action_add">
+            <span class="popup__input-error popup__input_about-error">
+              aqui ira el mesanje de error:
+            </span>
+            <button
+              class="popup__submit-btn popup__submit-btn_action_add"
+              type="submit"
+            >
               Guardar
             </button>
           </form>
@@ -52,25 +69,37 @@
         </button>
         <div class="popup__card">
           <h3 class="popup__title">New Place</h3>
-          <form class="popup__input" id="form__profile">
+          <form class="popup__input" id="form__profile" novalidate>
             <input
               class="popup__text popup__input_title"
               type="text"
               placeholder="Title"
               name="title"
               id="input__card_title"
+              minlength="2"
+              maxlength="30"
+              required
             />
+            <span class="popup__input-error input__card_title-error">
+              aqui ira el mesanje de error:
+            </span>
             <input
               class="popup__text popup__input_url"
-              type="text"
+              type="url"
               placeholder="Image URL"
               name="link"
               id="input__card_link"
+              minlength="2"
+              maxlength="40"
+              required
             />
-
+            <span class="popup__input-error input__card_link-error">
+              aqui ira el mesanje de error:
+            </span>
             <button
               class="popup__submit-btn popup__submit-btn_action_add"
               id="card-submit-button"
+              type="submit"
             >
               Save
             </button>

@@ -59,6 +59,12 @@
   border-width: 0px 0px 1px;
   padding: 2% 0px;
 }
+.popup__text:invalid {
+  border-bottom: 1px solid red;
+}
+.popup__text:valid {
+  border-bottom: 1px solid green;
+}
 
 .popup__submit-btn {
   margin: 10% 10%;
@@ -71,6 +77,12 @@
   border-color: #c4c4c4;
   background-color: black;
   padding: 5% 0px;
+}
+.popup__submit-btn:invalid {
+  background-color: white;
+}
+.popup__submit-btn:valid {
+  background-color: black;
 }
 .popup__submit-btn:hover {
   color: #ffffff;
@@ -129,4 +141,7 @@
   border-radius: 10px;
   width: 500px;
   height: 500px;
+}
+.popup__input_type_error {
+  border-bottom: 1px solid rgba(rgb(193, 44, 44));
 }
