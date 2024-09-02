@@ -168,8 +168,8 @@ const checkInputValidity = (popupText, formProfile, settings) => {
 
 function toggleButtonState(inputList, settings) {}
 
-const setEventListeners = (popupText, settings) => {
-  const formProfile = array.from(
+const setEventListeners = (popupText, inputList, settings) => {
+  const formProfile = Array.from(
     popupText.querySelectorAll(settings.formProfile)
   );
   inputList.forEach((popupText) => {
@@ -181,7 +181,7 @@ const setEventListeners = (popupText, settings) => {
 };
 
 function enableValidation(settings) {
-  const formProfile = array.from(
+  const formProfile = Array.from(
     document.querySelectorAll(settings.formProfile)
   );
   formProfile.forEach((popupText) => {
@@ -201,12 +201,20 @@ enableValidation({
   errorClass: "popup__error_visible",
 });
 
-const closeOnEsc = (evt) => {
-  if (evt.key === "Escape") {
-    closeCardsPopupButton();
-    closeProfilePopupButton();
+//const closeOnEsc = (evt) => {
+// if (evt.key === "Escape") {
+// closeCardsPopupButton();
+//closeProfilePopupButton();
+//closeImgPopupButton();
+//}
+//};
+function closeOnEsc(event) {
+  if (event.key === "Escape") {
+    closeCardsPopupButton.classList.remove("active");
+    closeProfilePopupButton.classList.remove("active");
+    closeImgPopupButton.classList.remove("active");
   }
-};
+}
 
 document.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("active")) {
