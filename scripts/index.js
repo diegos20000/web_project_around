@@ -129,6 +129,7 @@ profileEditButton.addEventListener("click", function () {
   inputNameNode.value = profileNameNode.textContent;
   inputAboutNode.value = profileAboutNode.textContent;
   popupSaveButton.classList.remove("active");
+  document.addEventListener("keydown", closeOnEsc);
 });
 
 formProfile.addEventListener("submit", function (event) {
@@ -140,101 +141,18 @@ formProfile.addEventListener("submit", function (event) {
     popupProfile.classList.remove("active");
   }
 });
-
-const showInputError = (formProfile, popupText, errorMessage, settings) => {
-  const errorElement = formProfile.querySelector(`.${popupText.id}-error`);
-  popupText.classList.add("popup__text_type-error");
-  errorElement.textContent = errorMessage;
-  errorElement.classList.add("popup__text-error_active");
-};
-
-const hideInputError = (popupText, formProfile, settings) => {
-  const errorElement = formProfile.querySelector(`.${popupText.id}-error`);
-  popupText.classList.remove("popup__text_type-error");
-  errorElement.classList.remove("popup__text-error_active");
-
-  errorElement.textContent = "";
-};
-
-const checkInputValidity = (popupText, formProfile, settings) => {
-  if (!popupText.validity.valid) {
-    showInputError(
-      popupText,
-      formProfile,
-      formProfile.validationMessage,
-      settings
-    );
-  } else {
-    hideInputError(popupText, formProfile, settings);
-  }
-};
-
-const hasInvalidInput = (inputList) => {
-  return inputList.some((popupText) => {
-    return !popupText.validity.valid;
-  });
-};
-
-const toggleButtonState = (inputList, popupSaveButton, settings) => {
-  if (hasInvalidInput(inputList)) {
-    popupSaveButton.classList.add("button_inactive");
-  } else {
-    popupSaveButton.classList.remove("button_inactive");
-  }
-};
-
-const setEventListeners = (popupText, inputList, settings) => {
-  const formProfile = Array.from(
-    popupText.querySelectorAll(settings.formProfile)
-  );
-  inputList.forEach((popupText) => {
-    popupText.addEventListener("input", function () {
-      checkInputValidity(popupText, formProfile, settings);
-      toggleButtonState(inputList, settings);
-    });
-  });
-};
-
-function enableValidation(settings) {
-  const formProfile = Array.from(
-    document.querySelectorAll(settings.formProfile)
-  );
-  formProfile.forEach((popupText) => {
-    popupText.addEventListener("submit", function (evt) {
-      evt.preventDefault();
-    });
-    setEventListeners(popupText, settings);
-  });
-}
-
-enableValidation({
-  formProfile: ".popup__input",
-  popupText: ".popup__text",
-  popupSaveButton: ".popup__submit-btn",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-});
-
-//const closeOnEsc = (evt) => {
-// if (evt.key === "Escape") {
-// closeCardsPopupButton();
-//closeProfilePopupButton();
-//closeImgPopupButton();
-//}
-//};
 function closeOnEsc(event) {
   if (event.key === "Escape") {
-    closeCardsPopupButton.classList.remove("active");
-    closeProfilePopupButton.classList.remove("active");
-    closeImgPopupButton.classList.remove("active");
+    popupCards.classList.remove("active");
+    popupProfile.classList.remove("active");
+    popupImg.classList.remove("active");
   }
 }
 
 document.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("active")) {
-    closeCardsPopupButton();
-    closeImgPopupButton();
-    closeProfilePopupButton();
+    popupCards();
+    popupProfile();
+    popupImg();
   }
 });
