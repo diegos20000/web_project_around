@@ -44,7 +44,10 @@ const toggleButtonState = (inputList, popupSaveButton, settings) => {
   }
 };
 
-const setEventListeners = (formProfile, inputList, settings) => {
+const setEventListeners = (formProfile, settings) => {
+  const inputList = Array.from(formProfile.querySelectorAll(".popup__text"));
+  const popupSubmit = formProfile.querySelector(".popup__submit-btn");
+  toggleButtonState(inputList, popupSubmit, settings);
   inputList.forEach((popupText) => {
     popupText.addEventListener("input", function () {
       checkInputValidity(popupText, formProfile, settings);
@@ -62,12 +65,8 @@ function enableValidation(settings) {
     popupText.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
-    const inputList = Array.from(popupText.querySelectorAll(".popup__text"));
 
-    const popupSubmit = popupText.querySelector(".popup__submit-btn");
-    toggleButtonState(inputList, popupSubmit, settings);
-
-    setEventListeners(popupText, inputList, settings);
+    setEventListeners(popupText, settings);
   });
 }
 
