@@ -1,5 +1,7 @@
 const showInputError = (formProfile, popupText, errorMessage, settings) => {
-  const errorElement = formProfile.querySelector(`.${popupText.id}-error`);
+  const errorElement = formProfile.parentNode.querySelector(
+    `.${formProfile.id}-error`
+  );
   popupText.classList.add("popup__input-error");
   errorElement.textContent = errorMessage;
   errorElement.classList.add("popup__input-error_active");
@@ -33,8 +35,6 @@ const hasInvalidInput = (inputList) => {
 };
 
 const toggleButtonState = (inputList, popupSaveButton, settings) => {
-  console.log(popupSaveButton);
-  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     popupSaveButton.classList.add("button_inactive");
     popupSaveButton.disabled = true;
@@ -44,10 +44,7 @@ const toggleButtonState = (inputList, popupSaveButton, settings) => {
   }
 };
 
-const setEventListeners = (popupText, inputList, settings) => {
-  const formProfile = Array.from(
-    popupText.querySelectorAll(settings.formProfile)
-  );
+const setEventListeners = (formProfile, inputList, settings) => {
   inputList.forEach((popupText) => {
     popupText.addEventListener("input", function () {
       checkInputValidity(popupText, formProfile, settings);
