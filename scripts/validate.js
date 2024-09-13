@@ -61,6 +61,7 @@ function enableValidation(settings) {
   const formProfile = Array.from(
     document.querySelectorAll(settings.formProfile)
   );
+
   formProfile.forEach((popupText) => {
     popupText.addEventListener("submit", function (evt) {
       evt.preventDefault();
@@ -69,12 +70,3 @@ function enableValidation(settings) {
     setEventListeners(popupText, settings);
   });
 }
-
-enableValidation({
-  formProfile: ".popup__input",
-  popupText: ".popup__text",
-  popupSaveButton: ".popup__submit-btn",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-});
