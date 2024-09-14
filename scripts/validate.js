@@ -57,7 +57,7 @@ const setEventListeners = (formProfile, settings) => {
   });
 };
 
-function enableValidation(settings) {
+export function enableValidation(settings) {
   const formProfile = Array.from(
     document.querySelectorAll(settings.formProfile)
   );
