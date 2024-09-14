@@ -1,6 +1,7 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { initialCards, openPopupCards, closeOnEsc } from "./utils.js";
+import { enableValidation } from "./validate.js";
 
 const profileEditButton = document.querySelector(".group__button");
 const profileNameNode = document.querySelector(".group__name");
