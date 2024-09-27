@@ -8,7 +8,6 @@
     <meta name="description" content="Around the U.S." />
     <title>Around the U.S.</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="popup">
@@ -16,7 +15,7 @@
         <button class="popup__close">
           <img
             class="popup__close"
-            src="./images/Close Icon.jpg"
+            src="<%=require('./images/Close Icon.jpg') %>"
             alt="close icon"
           />
         </button>
@@ -59,7 +58,7 @@
         <button class="popup__close" id="close-popup-cards">
           <img
             class="popup__close"
-            src="./images/Close Icon.jpg"
+            src="<%=require('./images/Close Icon.jpg')%>"
             alt="close icon"
           />
         </button>
@@ -105,14 +104,17 @@
     <div class="page">
       <header class="header">
         <p class="header__title">
-          <img src="./images/Vector.jpg" alt="Around The U.S." />
+          <img
+            src="<%=require('./images/Vector.jpg')%>"
+            alt="Around The U.S."
+          />
         </p>
         <hr class="header__hr" />
       </header>
       <main class="content">
         <div class="profile">
           <img
-            src="./images/avatar pic.jpeg"
+            src="<%=require('./images/avatar pic.jpeg')%>"
             alt="Jacques Cousteau"
             class="profile__img"
           />
@@ -127,7 +129,7 @@
           </section>
           <button class="profile__addbutton">
             <img
-              src="./images/Rectangle.jpg"
+              src="<%=require('./images/Rectangle.jpg')%>"
               alt="Add Button"
               class="profile__button-img"
             />
@@ -137,7 +139,7 @@
           <div class="popup__image-container">
             <button class="popup__close" id="popup__close_img">
               <img
-                src="./images/Close Icon.jpg"
+                src="<%=require('./images/Close Icon.jpg')%>"
                 alt="close button"
                 class="popup__close"
               />
@@ -159,7 +161,7 @@
           <div class="element__trash">
             <img
               class="element__trash_icon"
-              src="./images/trashnuevo.svg"
+              src="<%=require('./images/trashnuevo.svg')%>"
               alt="trash icon"
             />
           </div>
@@ -173,6 +175,5 @@
         </div>
       </template>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

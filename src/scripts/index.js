@@ -3,6 +3,8 @@ import FormValidator from "./FormValidator.js";
 import { initialCards, openPopupCards, closeOnEsc } from "./utils.js";
 import { enableValidation } from "./validate.js";
 
+import Popup from "./Popup.js";
+
 const profileEditButton = document.querySelector(".group__button");
 const profileNameNode = document.querySelector(".group__name");
 const profileAboutNode = document.querySelector(".profile__exp");
@@ -40,7 +42,9 @@ const cardArea = document.querySelector(".elements");
 formAddCards.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
-  const newCard = createCard(inputCardTitle.value, inputCardLink.value);
+  const newCard = createCard(inputCardTitle.value, inputCardLink.value, () => {
+    popupImg.open(inputCardTitle.value, inputCardLink.value);
+  });
   cardArea.prepend(newCard);
   popupProfile.classList.remove("active");
 });
@@ -73,7 +77,9 @@ function createCard(name, link) {
 }
 
 initialCards.forEach(function (item) {
-  const newCard = createCard(item.name, item.link);
+  const newCard = createCard(item.name, item.link, () => {
+    popupImg.open(item.name, item, link);
+  });
   cardArea.append(newCard);
 });
 
