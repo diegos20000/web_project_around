@@ -1,9 +1,13 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import { initialCards, openPopupCards, closeOnEsc } from "./utils.js";
-import { enableValidation } from "./validate.js";
-
-import Popup from "./Popup.js";
+import Card from "../scripts/Card.js";
+import FormValidator from "../scripts/FormValidator.js";
+import { initialCards, openPopupCards, closeOnEsc } from "../scripts/utils.js";
+import { enableValidation } from "../scripts/validate.js";
+import "./index.css";
+import Popup from "../scripts/Popup.js";
+import Section from "../scripts/Section.js";
+import UserInfo from "../scripts/UserInfo.js";
+import PopupWithForm from "../scripts/PopupWithForm.js";
+import PopupWithImage from "../scripts/PopupWithImage.js";
 
 const profileEditButton = document.querySelector(".group__button");
 const profileNameNode = document.querySelector(".group__name");
@@ -136,7 +140,7 @@ enableValidation({
   errorClass: "popup__error_visible",
 });
 
-const validationProfile = new FormValidator(popup, settings);
+const validationProfile = new FormValidator(Popup, settings);
 validationProfile.enableValidation();
 
 const validationCardForm = new FormValidator(formAddCards, settings);
