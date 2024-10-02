@@ -1,6 +1,13 @@
-import Card from "../scripts/Card.js";
+import { Card } from "../scripts/Card.js";
 import FormValidator from "../scripts/FormValidator.js";
-import { initialCards, openPopupCards, closeOnEsc } from "../scripts/utils.js";
+import {
+  initialCards,
+  openPopupCards,
+  closeOnEsc,
+  popupProfile,
+  popupCards,
+  popupImg,
+} from "../scripts/utils.js";
 import { enableValidation } from "../scripts/validate.js";
 import "./index.css";
 import Popup from "../scripts/Popup.js";
@@ -43,7 +50,7 @@ const popupUrl = document.querySelector(".popup_input_url");
 const cardTemplate = document.querySelector("#card__template").content;
 const cardArea = document.querySelector(".elements");
 
-formAddCards.addEventListener("submit", function (evt) {
+/*formAddCards.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
   const newCard = createCard(inputCardTitle.value, inputCardLink.value, () => {
@@ -53,7 +60,7 @@ formAddCards.addEventListener("submit", function (evt) {
   popupProfile.classList.remove("active");
 });
 
-function createCard(name, link) {
+/*function createCard(name, link) {
   const element = cardTemplate.querySelector(".element").cloneNode(true);
   const elementImg = element.querySelector(".element__img");
   const elementText = element.querySelector(".element__text");
@@ -78,7 +85,7 @@ function createCard(name, link) {
   elementImg.src = link;
   elementImg.alt = name;
   return element;
-}
+}*/
 
 initialCards.forEach(function (item) {
   const newCard = createCard(item.name, item.link, () => {
@@ -87,7 +94,7 @@ initialCards.forEach(function (item) {
   cardArea.append(newCard);
 });
 
-formProfile.addEventListener("submit", function (event) {
+/*formProfile.addEventListener("submit", function (event) {
   event.preventDefault();
   if (inputNameNode.value !== "" && inputAboutNode.value !== "") {
     profileNameNode.textContent = inputNameNode.value;
@@ -129,7 +136,7 @@ document.addEventListener("click", function (evt) {
     popupProfile();
     popupImg();
   }
-});
+});*/
 
 enableValidation({
   formProfile: ".popup__input",

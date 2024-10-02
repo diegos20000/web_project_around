@@ -11,6 +11,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .profile__info {
   margin: 0;
@@ -25,6 +26,7 @@
   font-size: 42px;
   text-align: left;
   margin: 0;
+  text-overflow: ellipsis;
 }
 .profile__exp {
   font-size: 18px;
@@ -43,6 +45,7 @@
   background: none;
   border-style: none;
 }
+
 .profile__button-img {
   width: 150px;
   max-width: 100%;

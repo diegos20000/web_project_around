@@ -20,6 +20,7 @@
   object-fit: cover;
   width: 282px;
   height: 282px;
+  border-radius: 2%;
 }
 
 .element_text-like {
@@ -30,12 +31,12 @@
 }
 .element__text {
   margin: auto 5%;
-  max-width: 237px;
+  max-width: 200px;
   color: black;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 10px;
+  padding: 5px;
   text-align: left;
 }
 .element__name {
@@ -45,12 +46,13 @@
   color: black;
 }
 .element__likes {
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #00000000;
   border-style: none;
   box-sizing: border-box;
+  padding-right: 30px;
   width: 20px;
   height: 20px;
   display: flex;
