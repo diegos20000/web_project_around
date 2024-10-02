@@ -15,6 +15,7 @@
   opacity: 1;
   pointer-events: all;
   scale: 1;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .popup__container {
