@@ -1,9 +1,18 @@
 const cardTemplate = document.querySelector("#card__template").content;
 
 export default class Card {
-  constructor(name, link, handleClickImage) {
+  constructor(
+    name,
+    link,
+    user,
+    { handleClickImage, handleDeleteCard, handleAddLike, handleRemoveLike }
+  ) {
     (this.name = name), (this.link = link);
-    this.handleClickImage = handleClickImage;
+    this._user = user;
+    this._handleClickImage = handleClickImage;
+    this._handleDeleteCard = handleDeleteCard;
+    this._handleAddLike = handleAddLike;
+    this._handleRemoveLike = handleRemoveLike;
   }
   getTemplate() {
     return cardTemplate.querySelector(".element").cloneNode(true);

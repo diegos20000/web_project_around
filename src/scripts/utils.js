@@ -2,10 +2,6 @@ export const popupProfile = document.querySelector(".popup");
 export const popupCards = document.querySelector("#popup__cards");
 export const popupImg = document.querySelector("#popup__image");
 
-popupProfile.setEventListeners();
-popupCards.setEventListeners();
-popupImg.setEventListeners();
-
 export const initialCards = [
   {
     name: "Valle de Yosemite",
