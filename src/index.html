@@ -21,24 +21,24 @@
         </button>
         <div class="popup__card">
           <h3 class="popup__title">Editar perfil</h3>
-          <form class="popup__input" novalidate>
+          <form class="popup__form" novalidate id="form-profile">
             <input
-              class="popup__text popup__text_title"
+              class="popup__input popup__text_title"
               type="text"
               placeholder="Nombre"
               minlength="2"
               maxlength="40"
-              id="popup__input_name"
+              id="popup__input popup__input_name"
               required
             />
             <span class="popup__input-error popup__input_name-error"> </span>
             <input
-              class="popup__text popup__text_about"
+              class="popup__input popup__text_about"
               type="text"
               placeholder="Acerca de mí"
               minlength="2"
               maxlength="40"
-              id="popup__input_about"
+              id="popup__input popup__input_about"
               required
             />
             <span class="popup__input-error popup__input_about-error"> </span>
@@ -64,9 +64,9 @@
         </button>
         <div class="popup__card">
           <h3 class="popup__title">New Place</h3>
-          <form class="popup__input" id="form__profile" novalidate>
+          <form class="popup__form" id="form-cards" novalidate>
             <input
-              class="popup__text popup__input_title"
+              class="popup__input popup__input_title"
               type="text"
               placeholder="Title"
               name="title"
@@ -78,7 +78,7 @@
             />
             <span class="popup__input-error input__card_title-error"> </span>
             <input
-              class="popup__text popup__input_url"
+              class="popup__input popup__input_url"
               type="url"
               placeholder="Image URL"
               name="link"

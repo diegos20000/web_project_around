@@ -4,11 +4,10 @@ export default class Card {
   constructor(
     name,
     link,
-    user,
     { handleClickImage, handleDeleteCard, handleAddLike, handleRemoveLike }
   ) {
     (this.name = name), (this.link = link);
-    this._user = user;
+
     this._handleClickImage = handleClickImage;
     this._handleDeleteCard = handleDeleteCard;
     this._handleAddLike = handleAddLike;
