@@ -30,14 +30,14 @@ export default class FormValidator {
       this.formElement.querySelectorAll(this.settings.inputSelector)
     );
     this.inputList.forEach((inputElement) => {
-      inputElement.addEventListerner("input", () => {
+      inputElement.addEventListener("input", () => {
         this.checkInputValidity(inputElement);
         this.toggleButtonState(inputElement);
       });
     });
   }
   enableValidation() {
-    this.formElement.addEventListerner("submit", function (evt) {
+    this.formElement.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
     this.setEventListeners();
