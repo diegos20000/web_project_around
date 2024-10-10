@@ -27,22 +27,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2px;
+  padding: 1px;
 }
 .element__text {
-  margin: auto 5%;
+  margin: auto 3%;
   max-width: 200px;
   color: black;
+
+  padding: 1px;
+}
+.element__name {
+  font-size: 20px;
+  font-weight: 900;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 5px;
-  text-align: left;
-}
-.element__name {
-  font-size: 24px;
-  font-weight: 900;
-  text-align: left;
   color: black;
 }
 .element__likes {
