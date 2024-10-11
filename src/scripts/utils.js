@@ -28,16 +28,3 @@ export const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
-
-export function closeOnEsc(event) {
-  if (event.key === "Escape") {
-    popupCards.classList.remove("active");
-    popupProfile.classList.remove("active");
-    popupImg.classList.remove("active");
-  }
-}
-
-export function openPopupCards() {
-  popupCards.classList.add("active");
-  document.addEventListener("keydown", closeOnEsc);
-}
