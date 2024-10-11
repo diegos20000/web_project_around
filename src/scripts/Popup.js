@@ -1,6 +1,7 @@
 export default class Popup {
   constructor(popupSelector) {
     this.popup = document.querySelector(popupSelector);
+
     this.closeButton = this.popup.querySelector(".popup__close");
     this._handleEscClose = this._handleEscClose.bind(this);
   }
@@ -22,7 +23,7 @@ export default class Popup {
   }
 
   setEventListeners() {
-    this.popup.querySelector(".popup__close").addEventListener("click", () => {
+    this.closeButton.addEventListener("click", () => {
       this.close();
     });
 

@@ -18,7 +18,7 @@ export default class Card {
   }
 
   openModalCard() {
-    openCard(this.name, this.link);
+    this._handleClickImage(this.name, this.link);
   }
 
   toggleLike() {
@@ -35,9 +35,9 @@ export default class Card {
     });
     this.cardDeleteButton.addEventListener("click", () => {
       this.removeCard();
-      this.cardImage.addEventListener("click", () => {
-        this.handleClickImage();
-      });
+    });
+    this.cardImage.addEventListener("click", () => {
+      this._handleClickImage();
     });
   }
 
