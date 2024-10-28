@@ -156,6 +156,48 @@
             <div class="popup__overlay"></div>
           </div>
         </div>
+        <section class="pop-up" id="popUp-Delete">
+          <div class="pop-up__container">
+            <button class="pop-up__close-button">
+              <img
+                src="<%=require('./images/Close Icon.jpg') %>"
+                alt="Pop up close icon"
+              />
+            </button>
+            <form class="pop-up__form">
+              <h3 class="pop-up__title pop-up__delete-title">
+                ¿Estás seguro/a?
+              </h3>
+              <button class="pop-up__save-button" type="submit">Sí</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="pop-up" id="popUp-Avatar">
+          <div class="pop-up__container">
+            <button class="pop-up__close-button">
+              <img
+                src="<%=require('./images/Close Icon.jpg')%>"
+                alt="Pop up close icon"
+              />
+            </button>
+            <form class="pop-up__form" id="popUp-Form">
+              <h3 class="pop-up__title">Cambiar foto de perfil</h3>
+              <fieldset class="pop-up__input-container">
+                <input
+                  class="pop-up__form-item pop-up__form-item-about"
+                  type="url"
+                  placeholder="URL de la imagen"
+                  id="link"
+                  name="link"
+                  required
+                />
+                <span class="pop-up__form-error pop-up__form-error_link"></span>
+              </fieldset>
+              <button class="pop-up__save-button" type="submit">Guardar</button>
+            </form>
+          </div>
+        </section>
         <div class="elements"></div>
       </main>
       <footer class="footer">
