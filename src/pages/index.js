@@ -7,7 +7,7 @@ import UserInfo from "../scripts/UserInfo.js";
 import PopupWithForm from "../scripts/PopupWithForm.js";
 import PopupWithImage from "../scripts/PopupWithImage.js";
 import api from "../scripts/Api.js";
-
+import PopupWithConfirmation from "../scripts/PopupWithConfirmation.js";
 const formProfile = document.querySelector("#form-profile");
 
 const inputName = document.querySelector(".popup__text_title");
@@ -15,30 +15,40 @@ const inputAbout = document.querySelector(".popup__text_about");
 const buttonAddCard = document.querySelector(".profile__addbutton");
 const formAddCards = document.querySelector("#form-cards");
 
+const avatarImage = document.getElementById("profile__avatar_update");
+const avatarNode = document.querySelector(".profile__img");
+
 api.getInitialCards().then((cards) => {
   const cardSection = new Section(
     {
       items: cards,
 
       renderer: (item) => {
-        const card = new Card(item.name, item.link, {
-          handleClickImage: (link, name) => popupImage.open(link, name),
+        const card = new Card(
+          item.name,
+          item.link,
+          item.user,
+          item._id,
 
-          handleDeleteCard: (cardId, callback) => {
-            deleteForm.open(() => {
-              api.deleteCard(cardId).then(() => {
-                callback();
+          {
+            handleClickImage: (link, name) => popupImage.open(link, name),
+
+            handleDeleteCard: (cardId, callback) => {
+              deleteForm.open(() => {
+                api.deleteCard(cardId).then(() => {
+                  callback();
+                });
               });
-            });
-          },
-          handleAddLike: (cardId) => {
-            return api.addCardLike(cardId);
-          },
+            },
+            handleAddLike: (cardId) => {
+              return api.addCardLike(cardId);
+            },
 
-          handleRemoveLike: (cardId) => {
-            return api.deleteCardLike(cardId);
-          },
-        });
+            handleRemoveLike: (cardId) => {
+              return api.deleteCardLike(cardId);
+            },
+          }
+        );
         cardSection.addItem(card.getCard());
       },
     },
@@ -48,9 +58,7 @@ api.getInitialCards().then((cards) => {
   cardSection.renderItems();
 });
 
-const deleteForm = new PopupWithConfirmation({
-  popupSelector: "#popUp-Delete",
-});
+const deleteForm = new PopupWithConfirmation("#popUp-Delete");
 deleteForm.setEventListeners();
 
 const popupImage = new PopupWithImage("#popup__image");
@@ -77,28 +85,35 @@ document.querySelector(".profile__addbutton").addEventListener("click", () => {
 });
 
 const addCardPopup = new PopupWithForm("#popup__cards", (inputValues) => {
-  const newCardInstance = new Card(inputValues.title, inputValues.link, {
-    handleClickImage: () => {
-      popupImage.open(inputValues.link, inputValues.title);
-    },
-    handleDeleteCard: (cardId, callback) => {
-      deleteForm.open(() => {
-        api.deleteCard(cardId).then(() => {
-          callback();
+  const newCardInstance = new Card(
+    inputValues.title,
+    inputValues.link,
+    inputValues.user,
+    inputValues._id,
+    {
+      handleClickImage: () => {
+        popupImage.open(inputValues.link, inputValues.title);
+      },
+      handleDeleteCard: (cardId, callback) => {
+        deleteForm.open(() => {
+          api.deleteCard(cardId).then(() => {
+            callback();
+          });
         });
-      });
-    },
-    handleAddLike: (cardId) => {
-      return api.addCardLike(cardId);
-    },
+      },
+      handleAddLike: (cardId) => {
+        return api.addCardLike(cardId);
+      },
 
-    handleRemoveLike: (cardId) => {
-      return api.deleteCardLike(cardId);
-    },
-  });
+      handleRemoveLike: (cardId) => {
+        return api.deleteCardLike(cardId);
+      },
+    }
+  );
 
   const newcardElement = newCardInstance.getCard();
   cardSection.addItem(newcardElement);
+  addCardPopup.close();
 });
 buttonAddCard.addEventListener("click", () => {
   validationCardForm.enableValidation(settings);
@@ -133,6 +148,7 @@ api
       name: userData.name,
       job: userData.about,
     });
+    avatarNode.src = userData.avatar;
   })
   .catch((error) => {
     console.error(error);
@@ -144,5 +160,24 @@ document.addEventListener("keydown", (event) => {
     addCardPopup.close();
     popupImage.close();
     deleteForm.close();
+    avatarForm.close();
   }
 });
+
+const avatarForm = new PopupWithForm("#popUp-Avatar", (inputValues) => {
+  api
+    .updateAvatar(inputValues.link)
+    .then((user) => {
+      avatarNode.src = user.avatar;
+      avatarForm.close();
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+});
+
+avatarImage.addEventListener("click", () => {
+  avatarForm.open();
+});
+
+avatarForm.setEventListeners();

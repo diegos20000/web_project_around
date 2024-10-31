@@ -27,7 +27,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px;
+
+  padding: 10px;
 }
 .element__text {
   margin: auto 3%;
@@ -43,6 +44,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: black;
+  margin: 0;
 }
 .element__likes {
   background-size: contain;
