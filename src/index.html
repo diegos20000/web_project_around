@@ -12,7 +12,7 @@
   <body>
     <div class="popup" id="popup__edit">
       <div class="popup__container">
-        <button class="popup__close">
+        <button class="pop-up__close-button">
           <img
             class="popup__close"
             src="<%=require('./images/Close Icon.jpg') %>"
@@ -57,7 +57,7 @@
     </div>
     <div class="popup" id="popup__cards">
       <div class="popup__container">
-        <button class="popup__close" id="close-popup-cards">
+        <button class="pop-up__close-button" id="close-popup-cards">
           <img
             class="popup__close"
             src="<%=require('./images/Close Icon.jpg')%>"
@@ -114,7 +114,7 @@
         <hr class="header__hr" />
       </header>
       <main class="content">
-        <div class="profile">
+        <div class="profile" id="profile__avatar_update">
           <img
             src="<%=require('./images/avatar pic.jpeg')%>"
             alt="Jacques Cousteau"
@@ -142,7 +142,7 @@
         </div>
         <div class="popup__image" id="popup__image">
           <div class="popup__image-container">
-            <button class="popup__close" id="popup__close_img">
+            <button class="pop-up__close-button" id="popup__close_img">
               <img
                 src="<%=require('./images/Close Icon.jpg')%>"
                 alt="close button"
@@ -156,7 +156,7 @@
             <div class="popup__overlay"></div>
           </div>
         </div>
-        <section class="pop-up" id="popUp-Delete">
+        <section class="popup" id="popUp-Delete">
           <div class="pop-up__container">
             <button class="pop-up__close-button">
               <img
@@ -173,7 +173,7 @@
           </div>
         </section>
 
-        <section class="pop-up" id="popUp-Avatar">
+        <section class="popup" id="popUp-Avatar">
           <div class="pop-up__container">
             <button class="pop-up__close-button">
               <img
@@ -181,7 +181,7 @@
                 alt="Pop up close icon"
               />
             </button>
-            <form class="pop-up__form" id="popUp-Form">
+            <form class="popup__form" id="popUp-Form">
               <h3 class="pop-up__title">Cambiar foto de perfil</h3>
               <fieldset class="pop-up__input-container">
                 <input
@@ -218,6 +218,7 @@
               <p class="element__name"></p>
             </div>
             <button class="element__likes"></button>
+            <p class="element__counter">0</p>
           </div>
         </div>
       </template>
