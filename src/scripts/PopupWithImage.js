@@ -7,6 +7,9 @@ export default class PopupWithImage extends Popup {
     this.popupImage = this.popup.querySelector(".popup__large-image");
 
     this.popupCaption = this.popup.querySelector(".popup_title-img");
+    this.closeButton = this.popup.querySelector(".pop-up__close-button");
+
+    this.setEventListeners();
   }
 
   open(imageSrc, captionText) {
@@ -14,5 +17,12 @@ export default class PopupWithImage extends Popup {
     this.popupImage.alt = captionText;
     this.popupCaption.textContent = captionText;
     super.open();
+  }
+
+  close() {
+    this.popupImage.src = "";
+    this.popupImage.alt = "";
+    this.popupCaption.textContent = "";
+    super.close();
   }
 }
