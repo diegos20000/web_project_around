@@ -5,7 +5,7 @@ export default class PopupWithForm extends Popup {
     super(popupSelector);
     this._handleFormSubmit = handleFormSubmit;
     this._form = this.popup.querySelector(".popup__form");
-    console.log(this._form);
+
     this._inputList = this._form.querySelectorAll(".popup__input");
   }
 
@@ -22,11 +22,16 @@ export default class PopupWithForm extends Popup {
     this._form.addEventListener("submit", (event) => {
       event.preventDefault();
       this._handleFormSubmit(this._getInputValues());
-      console.log(this._form);
-      this._form.querySelector(".popup__submit-btn").textContent = "Guardar";
+
+      this._form.querySelector(".pop-up__save-button").textContent = "Guardar";
       this.close();
     });
   }
+
+  //open(cardId) {
+  //this._input.value = cardId;
+  //super.open();
+  // }
 
   close() {
     super.close();
