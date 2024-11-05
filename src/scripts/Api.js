@@ -131,7 +131,7 @@ class Api {
       method: "PATCH",
       headers: this.headers,
       body: JSON.stringify({
-        avatar,
+        avatar: avatar,
       }),
     })
       .then((res) => {
@@ -151,6 +151,7 @@ const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/web-es-cohort-16",
   headers: {
     authorization: "8edde1ac-8f4b-48c8-98ae-8fc6660146ff",
+    "Content-Type": "application/json",
   },
 });
 

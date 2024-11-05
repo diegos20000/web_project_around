@@ -11,6 +11,7 @@ export default class PopupWithForm extends Popup {
 
   _getInputValues() {
     const formValues = {};
+    console.log(this._inputList);
     this._inputList.forEach((input) => {
       formValues[input.name] = input.value;
     });
@@ -22,7 +23,7 @@ export default class PopupWithForm extends Popup {
     this._form.addEventListener("submit", (event) => {
       event.preventDefault();
       this._handleFormSubmit(this._getInputValues());
-
+      console.log(this._form);
       this._form.querySelector(".pop-up__save-button").textContent = "Guardar";
       this.close();
     });
