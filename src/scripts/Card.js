@@ -6,11 +6,15 @@ export default class Card {
     link,
     user,
     cardId,
+    cardOwner,
 
     { handleClickImage, handleDeleteCard, handleAddLike, handleRemoveLike }
   ) {
     (this.name = name), (this.link = link);
     this._user = user;
+    this.cardOwner = cardOwner;
+    console.log(this._user);
+    console.log(this.cardOwner);
     this._handleClickImage = handleClickImage;
     this._handleDeleteCard = handleDeleteCard;
     this._handleAddLike = handleAddLike;
@@ -54,10 +58,15 @@ export default class Card {
         });
       }
     });
+
     this.cardDeleteButton.addEventListener("click", () => {
-      this._handleDeleteCard(this.cardId, () => {
-        this.removeCard();
-      });
+      if (this.cardOwner._id === this._user._id) {
+        this._handleDeleteCard(this.cardId, () => {
+          this.removeCard();
+        });
+      } else {
+        console.log("No tienes permiso para eliminar esta tarjeta.");
+      }
     });
     this.cardImage.addEventListener("click", () => {
       this.openModalCard();
@@ -73,6 +82,9 @@ export default class Card {
     this.cardTitle.textContent = this.name;
     this.cardImage.src = this.link;
     this.counterLikes = this.htmlCard.querySelector(".element__counter");
+    if (this._user && this.cardOwner._id !== this._user._id) {
+      this.cardDeleteButton.remove();
+    }
   }
 
   getCard() {
@@ -93,7 +105,7 @@ export default class Card {
     const cardLikeButton = this._element.querySelector(".element__likes");
     this.counterLikes = this._element.querySelector(".element__counter");
 
-    if (this._user._id !== this.name.owner._id) {
+    if (this.cardOwner !== this._user._id) {
       cardDeleteButton.remove();
     }
 
